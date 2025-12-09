@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Registration Form</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery CDN (online) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Our JS file -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Registration Form</h1>
+        <p class="subtitle">Please fill in your details correctly and submit</p>
+
+        <!-- Registration Form -->
+        <form id="registrationForm" action="process.php" method="POST">
+            <!-- Personal Details -->
+            <h2>Personal Details</h2>
+            <div class="form-row">
+                <label for="fullName">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-row">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-row">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <div class="form-row">
+                <label>Gender</label>
+                <div class="inline-options">
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+            </div>
+
+            <!-- Academic Details -->
+            <h2>Academic Details</h2>
+            <div class="form-row">
+                <label for="course">Course Applying For</label>
+                <select id="course" name="course">
+                    <option value="B.E Computer Science">B.E Computer Science</option>
+                    <option value="B.E Information Science">B.E Information Science</option>
+                    <option value="B.E Electronics & Communication">B.E Electronics & Communication</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="semester">Current/Last Semester</label>
+                <input type="number" id="semester" name="semester" min="1" max="8">
+            </div>
+
+            <div class="form-row">
+                <label for="percentage">Percentage / CGPA</label>
+                <input type="text" id="percentage" name="percentage" placeholder="e.g., 8.5 CGPA or 85%">
+            </div>
+
+            <!-- Address -->
+            <h2>Address</h2>
+            <div class="form-row">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3"></textarea>
+            </div>
+
+            <div class="form-row">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+            </div>
+
+            <div class="form-row">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state">
+            </div>
+
+            <div class="form-row">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" name="pincode">
+            </div>
+
+            <!-- Other Information -->
+            <h2>Other Information</h2>
+            <div class="form-row">
+                <label>Skills</label>
+                <div class="inline-options">
+                    <label><input type="checkbox" name="skills[]" value="C Programming"> C Programming</label>
+                    <label><input type="checkbox" name="skills[]" value="Java"> Java</label>
+                    <label><input type="checkbox" name="skills[]" value="Python"> Python</label>
+                    <label><input type="checkbox" name="skills[]" value="Web Development"> Web Development</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label for="comments">Any Comments</label>
+                <textarea id="comments" name="comments" rows="3"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-row button-row">
+                <button type="submit" id="submitBtn">Submit Application</button>
+            </div>
+        </form>
+
+        <!-- Small message area (handled by jQuery just for UX) -->
+        <div id="message"></div>
+    </div>
+</body>
+</html>
